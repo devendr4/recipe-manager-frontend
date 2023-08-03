@@ -3,6 +3,7 @@ import { NavBarWrapper } from "./components/organisms/NavBar";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./components/pages/home";
 import { RecipesPage } from "./components/pages/recipes";
+import { RecipeDetailPage } from "./components/pages/recipe-detail";
 
 export function App() {
   const router = createBrowserRouter([
@@ -16,6 +17,7 @@ export function App() {
         },
 
         { path: "/recipes", element: <RecipesPage /> },
+        { path: "/recipe-detail", element: <RecipeDetailPage /> },
       ],
     },
   ]);
