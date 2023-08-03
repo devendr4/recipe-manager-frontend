@@ -1,11 +1,18 @@
 import { FunctionComponent } from "preact";
 import { RecipeData } from "../../types";
+import { BaseTemplate } from "./BaseTemplate";
+import {Button} from '../atoms/Button'
 
 export const RecipeDetailTemplate: FunctionComponent<{
   data: RecipeData;
 }> = ({ data }) => {
   return (
-    <div class="p-5 sm:p-10 flex flex-col items-center">
+    <BaseTemplate>
+    <div class="flex flex-col items-center">
+        <div class="flex w-full justify-between">
+      <Button>Back</Button>
+      <Button>Edit</Button>
+      </div>
       <img src={data.img} height={"300"} width={"300"} alt={"cake"} />
       <h1>{data.name}</h1>
       {/* <p>{data.category}</p> */}
@@ -38,5 +45,6 @@ export const RecipeDetailTemplate: FunctionComponent<{
         ))}
       </section>
     </div>
+    </BaseTemplate>
   );
 };
