@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 const options = [
   { title: "home", Icon: BiSolidHomeHeart, route: "/" },
   { title: "recipes", Icon: BiSolidCake, route: "/recipes" },
-  { title: "new", Icon: BiPlus },
+  { title: "new", Icon: BiPlus, route: "/new-recipe" },
 ];
 export const NavBar = () => {
   return (

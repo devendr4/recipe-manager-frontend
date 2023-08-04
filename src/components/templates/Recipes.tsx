@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRootStore } from "../../store";
 import { RecipeCard } from "../organisms/cards/RecipeCard";
 import { recipesMockData } from "../../assets/mockData";
 import { BaseTemplate } from "./BaseTemplate";
-
 
 export const RecipesTemplate = () => {
   const selectedRecipe = useRootStore(state => state.selectedRecipe);
@@ -15,14 +14,15 @@ export const RecipesTemplate = () => {
       <h1>recipes</h1>
       <section class={"flex flex-col gap-3"}>
         {recipesMockData.map(v => (
-          <div
+          <Link
+            to="/recipe-detail"
             onClick={() => {
-              navigate("/recipe-detail");
+              // navigate("/recipe-detail");
               setRecipe(v);
             }}
           >
             <RecipeCard data={v} />
-          </div>
+          </Link>
         ))}
       </section>
     </BaseTemplate>
