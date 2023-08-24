@@ -8,7 +8,7 @@ export const NewIngredient = () => {
   console.log(setIngredients, ingredients);
   const { handleSubmit, register } = useForm();
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
+    <form onSubmit={handleSubmit(data => console.log(data))}>
       <p>title</p>
       <div className={"flex flex-col"}>
         <div>
@@ -20,7 +20,17 @@ export const NewIngredient = () => {
           <label>precio $</label>
 
           <br />
-          <input {...register("price", { required: true })} />
+          <input
+            {...register("price", {
+              _required: true,
+              get required() {
+                return this._required;
+              },
+              set required(value) {
+                this._required = value;
+              },
+            })}
+          />
         </div>
         <div>
           <label>medida</label>
